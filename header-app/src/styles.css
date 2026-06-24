@@ -1,0 +1,18 @@
+.remote-header {
+    align-items: center;
+    background: #1f2937;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 32px;
+}
+
+.remote-header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.remote-header span {
+    font-size: 14px;
+    opacity: 0.8;
+}
