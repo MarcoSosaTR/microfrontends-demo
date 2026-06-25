@@ -12,7 +12,14 @@ body {
 .wrapper {
     margin: 0 auto;
     max-width: 1100px;
-    padding: 32px;
+    padding: 28px clamp(16px, 4vw, 32px) 40px;
+}
+
+.wrapper h2 {
+  color: #111827;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.2;
+  margin: 0 0 20px;
 }
 
 .loading {
@@ -23,13 +30,18 @@ body {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
   gap: 16px;
 }
 
 .gallery img {
-  width: 100%;
-  min-height: 220px;
+  aspect-ratio: 4 / 3;
+  background: #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+  display: block;
+  height: auto;
+  max-width: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  width: 100%;
 }
