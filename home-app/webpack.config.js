@@ -5,6 +5,10 @@ const ModuleFederationPlugin = require(
 
 const dependencies = require("./package.json").dependencies;
 
+const headerAppRemoteUrl =
+  process.env.VITE_HEADER_REMOTE_URL ||
+  "http://localhost:3000/remoteEntry.js";
+
 module.exports = {
   mode: "development",
 
@@ -50,7 +54,7 @@ module.exports = {
       name: "homeApp",
 
       remotes: {
-        headerApp: "headerApp@http://localhost:3000/remoteEntry.js",
+        headerApp: `headerApp@${headerAppRemoteUrl}`,
       },
 
       shared: {
